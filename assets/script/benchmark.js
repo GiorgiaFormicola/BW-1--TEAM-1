@@ -11,8 +11,7 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+    question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -110,6 +109,42 @@ let contatoreDomande = 1;
 let contatoreRisposteGiuste = 0;
 let contatoreRisposteSbagliate = 0;
 arrayOttimizzato = shuffle();
+
+const visual = document.querySelector(".timer-number");
+const circle = document.querySelector(".progress-ring__circle");
+
+const radius = circle.r.baseVal.value;
+const circumference = 2 * Math.PI * radius;
+
+// Imposta strokeDasharray
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+// Inizio: cerchio completamente pieno
+circle.style.strokeDashoffset = circumference;
+
+const totalTime = 10; // secondi
+let startTime = null;
+
+function updateTimer(time) {
+  if (!startTime) startTime = time;
+  const elapsed = (time - startTime) / 1000;
+  const remaining = Math.max(totalTime - elapsed, 0);
+
+  // Aggiorna numero
+  visual.innerHTML = Math.ceil(remaining);
+
+  // Percentuale rimanente
+  const percent = remaining / totalTime;
+  // Inverti lo svuotamento: partendo da 0 offset completo fino a 100%
+  circle.style.strokeDashoffset = circumference * percent;
+
+  if (remaining > 0) {
+    requestAnimationFrame(updateTimer);
+  } else {
+    console.log("Tempo scaduto");
+  }
+}
+
+requestAnimationFrame(updateTimer);
 
 const attribuisciOggetto = (array, indice) => {
   const domanderisposte = [...array[j][0].incorrect_answers, array[j][0].correct_answer];
