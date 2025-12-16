@@ -11,8 +11,8 @@ body {
   background-size: cover;
   color: #ffffff;
   padding-inline: 6rem;
-  padding-bottom: 6rem;
-  padding-top: 2.5rem;
+  /* padding-bottom: 6rem; */
+  /* padding-top: 2.5rem; */
 }
 
 .titles {
@@ -42,6 +42,7 @@ body {
 /* HEADER  */
 
 header {
+  padding-top: 2.5rem;
   padding-bottom: 6rem;
 }
 
@@ -85,7 +86,8 @@ h3 {
 
 p {
   line-height: 1.2rem;
-  color: #b3b4c2;
+  /* color: #b3b4c2; */
+  color: #d8d9db;
 }
 
 ul {
@@ -93,7 +95,7 @@ ul {
   padding-left: 1.5rem;
   line-height: 1.5rem;
   list-style-type: disc;
-  color: #b3b4c2;
+  color: #d8d9db;
 }
 
 ul span {
@@ -109,35 +111,54 @@ footer {
   font-weight: 500;
   font-style: normal;
   font-size: 14.5px;
-  padding-bottom: 3rem;
+  padding-bottom: 6.5rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 form div {
   display: inline-block;
 }
 
-/* #checkbox {
-  -webkit-appearance: none;
-  appearance: none;
+#checkbox-div {
+  display: flex;
+  align-items: center;
+}
+
+#checkbox-div span {
   margin: 0;
   border: 0.2em solid white;
-  width: 1.5em;
-  height: 1.5em;
-  place-content: center;
-} */
+  width: 1.2rem;
+  height: 1.2rem;
+  position: relative;
+}
+
+input {
+  display: none;
+}
+
+input:checked + span:before {
+  content: "\2714";
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
 
 label {
-  padding-left: 0.5rem;
+  padding-left: 0.8rem;
 }
 
 button {
   padding-block: 1rem;
-  padding-inline: 4rem;
-  font-size: 22px;
-  font-weight: 800;
+  padding-inline: 3.5rem;
+  font-size: 20px;
+  font-weight: 700;
   background-color: #00ffff;
   border: #00ffff;
   box-shadow: 0px 0px 30px 0px #00ffff;
-  margin-left: 22%;
   color: #0b113b;
 }
