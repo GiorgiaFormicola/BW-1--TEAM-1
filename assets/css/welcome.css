@@ -112,27 +112,25 @@ footer {
   padding-bottom: 3rem;
 }
 
-/* #checkbox {
-  appearance: inherit;
-  border: 2px solid white;
-  width: 1rem;
-  height: 1rem;
-  margin: 0;
-}
-
-#checkbox :checked {
-  content: "x";
-} */
-
 form div {
   display: inline-block;
 }
+
+/* #checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  border: 0.2em solid white;
+  width: 1.5em;
+  height: 1.5em;
+  place-content: center;
+} */
 
 label {
   padding-left: 0.5rem;
 }
 
-a {
+button {
   padding-block: 1rem;
   padding-inline: 4rem;
   font-size: 22px;
@@ -140,7 +138,6 @@ a {
   background-color: #00ffff;
   border: #00ffff;
   box-shadow: 0px 0px 30px 0px #00ffff;
-  margin-left: 23%;
+  margin-left: 22%;
   color: #0b113b;
-  text-decoration: none;
 }
