@@ -132,7 +132,9 @@ footer {
   text-align: center;
   letter-spacing: 0.2rem;
 }
-
-footer span {
+.conteggioDomande, .totaleDomande {
+  display: inline-block;
+}
+.totaleDomande {
   color: #d20094;
 }
