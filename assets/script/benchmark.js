@@ -109,12 +109,13 @@ j = 0;
 let contatoreDomande = 1;
 let contatoreRisposteGiuste = 0;
 let contatoreRisposteSbagliate = 0;
+
 arrayOttimizzato = shuffle();
 
 const visual = document.querySelector(".timer-number");
 const circle = document.querySelector(".progress-ring__circle");
 
-const radius = circle.r.baseVal.value;
+/* const radius = circle.r.baseVal.value;
 const circumference = 2 * Math.PI * radius;
 
 // Imposta strokeDasharray
@@ -159,11 +160,15 @@ function startClock() {
       attribuisciOggetto(arrayOttimizzato, j);
     }
   }, 1000);
-}
+} */
 
-const attribuisciOggetto = (array, indice) => {
+const attribuisciOggetto = (array, ) => {
   if (j >= array.length) {
+    console.log(array.length)
     // Quiz finished — redirect
+    localStorage.setItem("contatoreRisposteGiuste", contatoreRisposteGiuste);
+    localStorage.setItem("contatoreRisposteSbagliate", contatoreRisposteSbagliate);
+    localStorage.setItem("totaleDomande",j);
     window.location.href = "../results.html";
     return;
   }
@@ -203,7 +208,8 @@ const attribuisciOggetto = (array, indice) => {
   }
 
   questionList.innerHTML = array[j][0].question;
-  startClock();
+
+  /*   startClock(); */
 
   console.log(contatoreRisposteGiuste);
   console.log(contatoreRisposteSbagliate);
