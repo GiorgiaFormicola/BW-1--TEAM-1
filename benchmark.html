@@ -6,30 +6,25 @@
     <title>BUILD WEEK 1 - Benchmark - Benchmark page</title>
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/benchmark.css" />
-    <link rel="stylesheet" href="./assets/css/timercirlcetemporary.css" />
     <title>Document</title>
   </head>
 
   <body>
-    <!-- <header>
-      <div>
+    <header>
+      <div class="logo">
         <img src="./assets/img/epicode_logo.png" alt="Epicode Logo" />
       </div>
       <div class="timer">
-        <svg class="progress-ring" width="100" height="100">
-          <circle class="progress-ring__circle-bg" r="45" cx="50" cy="50"></circle>
-          <circle class="progress-ring__circle" r="45" cx="50" cy="50"></circle>
+        <svg class="progress-ring" width="80" height="80">
+          <circle class="progress-ring__circle-bg" r="60" cx="75" cy="75"></circle>
+          <circle class="progress-ring__circle" r="60" cx="75" cy="75"></circle>
         </svg>
-        <div class="timer-number"></div>
-      </div>
-    </header> -->
 
-    <header>
-      <img src="./assets/img/epicode_logo.png" alt="Epicode Logo" />
-      <div>
-        <p>SECONDS</p>
-        <p id="seconds">16</p>
-        <p>REMAINING</p>
+        <div class="timer-text">
+          <span class="label">SECONDS</span>
+          <span class="value" id="timer-value">20</span>
+          <span class="label">REMAINING</span>
+        </div>
       </div>
     </header>
 
@@ -57,7 +52,8 @@
     </main>
 
     <footer>
-      <p class="conteggioDomande">/<p class='totaleDomande'></p>
+      <p class="conteggioDomande">/</p>
+      <p class="totaleDomande"></p>
     </footer>
     <script src="./assets/script/benchmark.js"></script>
   </body>

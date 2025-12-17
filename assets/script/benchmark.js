@@ -11,8 +11,7 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+    question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -112,63 +111,66 @@ let contatoreRisposteSbagliate = 0;
 
 arrayOttimizzato = shuffle();
 
-const visual = document.querySelector(".timer-number");
-const circle = document.querySelector(".progress-ring__circle");
+const totalTime = 20;
+let remaining = totalTime;
 
-/* const radius = circle.r.baseVal.value;
+const circle = document.querySelector(".progress-ring__circle");
+const value = document.getElementById("timer-value");
+
+const radius = circle.r.baseVal.value;
 const circumference = 2 * Math.PI * radius;
 
-// Imposta strokeDasharray
-circle.style.strokeDasharray = `${circumference} ${circumference}`;
-// Inizio: cerchio completamente pieno
-circle.style.strokeDashoffset = circumference;
+circle.style.strokeDasharray = circumference;
+circle.style.strokeDashoffset = 0;
 
-const totalTime = 20; // secondi
-let startTime = null;
-let timerId = null;
-let remainingTime = totalTime;
+let timerId;
 
-function startClock() {
+function startTimer() {
   clearInterval(timerId);
-  remainingTime = totalTime;
-
-  visual.textContent = remainingTime;
+  remaining = totalTime;
+  updateUI();
 
   timerId = setInterval(() => {
-    remainingTime--;
-    visual.textContent = remainingTime;
+    remaining--;
+    updateUI();
 
-    const percent = remainingTime / totalTime;
-    circle.style.strokeDashoffset = circumference * percent;
-
-    if (remainingTime <= 0) {
+    if (remaining <= 0) {
       clearInterval(timerId);
 
-      // TIMEOUT = WRONG ANSWER
-      contatoreRisposteSbagliate++;
-      contatoreDomande++;
-      j++;
-
-      // CLEAR previous question
+      // Pulisci risposte precedenti
       const questionList = document.querySelector(".question");
       const answersList = document.querySelector(".answers");
-      questionList.innerHTML = "";
       while (answersList.firstChild) {
+        questionList.innerHTML = "";
         answersList.removeChild(answersList.firstChild);
       }
 
-      attribuisciOggetto(arrayOttimizzato, j);
+      // Passa alla prossima domanda
+      j++;
+      contatoreDomande++;
+
+      if (j < arrayOttimizzato.length) {
+        attribuisciOggetto(arrayOttimizzato, j);
+      } else {
+        window.location.href = "../results.html";
+      }
     }
   }, 1000);
-} */
+}
 
-const attribuisciOggetto = (array, ) => {
+function updateUI() {
+  const offset = circumference * (1 - remaining / totalTime);
+  circle.style.strokeDashoffset = offset;
+  value.textContent = remaining;
+}
+
+const attribuisciOggetto = (array) => {
   if (j >= array.length) {
-    console.log(array.length)
+    console.log(array.length);
     // Quiz finished — redirect
     localStorage.setItem("contatoreRisposteGiuste", contatoreRisposteGiuste);
     localStorage.setItem("contatoreRisposteSbagliate", contatoreRisposteSbagliate);
-    localStorage.setItem("totaleDomande",j);
+    localStorage.setItem("totaleDomande", j);
     window.location.href = "../results.html";
     return;
   }
@@ -187,7 +189,7 @@ const attribuisciOggetto = (array, ) => {
     answersList.appendChild(btn);
     btn.textContent = domanderisposte[i];
     btn.addEventListener("click", function () {
-    /*clearInterval(timerId);*/
+      /*clearInterval(timerId);*/
 
       if (btn.textContent === array[j][0].correct_answer) {
         contatoreRisposteGiuste++;
@@ -209,7 +211,7 @@ const attribuisciOggetto = (array, ) => {
 
   questionList.innerHTML = array[j][0].question;
 
-  /*   startClock(); */
+  startTimer();
 
   console.log(contatoreRisposteGiuste);
   console.log(contatoreRisposteSbagliate);
