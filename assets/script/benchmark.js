@@ -11,7 +11,8 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+    question:
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -173,6 +174,7 @@ const attribuisciOggetto = (array, indice) => {
 
   for (let i = 0; i < domanderisposte.length; i++) {
     const btn = document.createElement("button");
+    btn.classList.add("answer-button-color");
     answersList.appendChild(btn);
     btn.textContent = domanderisposte[i];
     btn.addEventListener("click", function () {

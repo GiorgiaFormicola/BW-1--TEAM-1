@@ -33,7 +33,7 @@ body {
   color: #00ffff;
 }
 
-.answer-button-color {
+.answer-button-color:hover {
   background: linear-gradient(180deg, #ca0191 0%, #8a007a 80%);
 }
 
