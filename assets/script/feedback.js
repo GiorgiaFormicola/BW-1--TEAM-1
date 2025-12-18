@@ -19,26 +19,30 @@ const feedbackDissapears = () => {
   const form = document.querySelector(".feedback-form");
   const main = document.querySelector("main");
   const error = document.querySelector(".error");
+  const input = document.querySelector("input");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    if (selectedReview !== 0) {
+    if (selectedReview !== 0 && input.value !== "") {
       main.replaceChildren();
+      error.remove();
 
-      const box = document.createElement("div");
-      box.textContent = "Thank you for your feedback";
+      const box = document.createElement("h1");
+      box.classList.add("thanks");
+      box.textContent = "Thank you for your feedback!";
 
       main.appendChild(box);
     } else {
-      while (error.firstChild) {
-        error.removeChild(error.firstChild);
-      }
-      const divUnderInput = document.createElement("div");
-      divUnderInput.classList.add("alert");
-      divUnderInput.textContent = "Devi Selezionare ALMENO una Stella per continuare";
+      // while (error.firstChild) {
+      //   error.removeChild(error.firstChild);
+      // }
+      // const divUnderInput = document.createElement("div");
+      // divUnderInput.classList.add("alert");
+      // divUnderInput.textContent = "Please rate us to send your feedback!";
 
-      error.appendChild(divUnderInput);
+      // error.appendChild(divUnderInput);
+      error.style.visibility = "visible";
     }
   });
 };
