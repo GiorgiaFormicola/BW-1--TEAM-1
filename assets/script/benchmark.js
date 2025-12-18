@@ -159,7 +159,7 @@ function startTimer() {
 }
 
 function updateUI() {
-  const offset = circumference * (1 - remaining / totalTime);
+  const offset = circumference * (remaining / totalTime);
   circle.style.strokeDashoffset = offset;
   value.textContent = remaining;
 }
