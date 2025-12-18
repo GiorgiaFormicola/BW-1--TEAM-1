@@ -10,7 +10,8 @@ body {
   background-image: url(../img/bg.jpg);
   background-size: cover;
   color: #ffffff;
-  padding-inline: 6rem;
+  /* padding-inline: 6rem; */
+  padding-inline: 8rem;
 }
 
 .titles {
@@ -40,23 +41,31 @@ body {
 /* HEADER  */
 
 header {
-  padding-top: 2.5rem;
-  padding-bottom: 6rem;
+  /* padding-top: 2.5rem; */
+  padding-top: 3rem;
+  /* padding-bottom: 6rem; */
+  padding-bottom: 3rem;
 }
 
 header img {
-  width: 10rem;
+  /* width: 10rem; */
+  width: 11rem;
 }
 
 /* MAIN */
+main {
+  margin-block: 4rem;
+}
 
 h1 {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 80px;
-  line-height: 3.5rem;
+  /* font-size: 80px; */
+  font-size: 90px;
+  /* line-height: 3.5rem; */
+  line-height: 4rem;
 }
 
 h1 span {
@@ -68,8 +77,10 @@ section {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  font-size: 16px;
-  padding-block: 2.8rem;
+  /* font-size: 16px; */
+  font-size: 20px;
+  /* padding-block: 2.8rem; */
+  padding-top: 3rem;
 }
 
 h3 {
@@ -77,21 +88,25 @@ h3 {
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: 35px;
   color: #d20094;
   padding-bottom: 0.8rem;
 }
 
 p {
-  line-height: 1.2rem;
+  /* line-height: 1.2rem; */
+  line-height: 1.5rem;
   /* color: #b3b4c2; */
   color: #d8d9db;
 }
 
 ul {
-  padding-block: 2.5rem;
+  /* padding-block: 2.5rem; */
+  padding-block: 3rem;
   padding-left: 1.5rem;
-  line-height: 1.5rem;
+  /* line-height: 1.5rem; */
+  line-height: 2rem;
   list-style-type: disc;
   color: #d8d9db;
 }
@@ -108,8 +123,9 @@ footer {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-size: 14.5px;
-  padding-bottom: 6.5rem;
+  /* font-size: 14.5px; */
+  font-size: 16px;
+  /* padding-bottom: 6.5rem; */
 }
 
 form {
@@ -130,8 +146,10 @@ form div {
 #checkbox-div span {
   margin: 0;
   border: 0.2em solid white;
-  width: 1.2rem;
-  height: 1.2rem;
+  /* width: 1.2rem;
+  height: 1.2rem; */
+  width: 1.5rem;
+  height: 1.5rem;
   position: relative;
 }
 
@@ -144,8 +162,8 @@ form div {
 input:checked + span:before {
   content: "\2714";
   position: absolute;
-  top: 0;
-  left: 10%;
+  top: 9%;
+  left: 15%;
 }
 
 label {
@@ -153,12 +171,18 @@ label {
 }
 
 button {
-  padding-block: 1rem;
+  /* padding-block: 1rem; */
+  padding-block: 1.2rem;
+  /* padding-inline: 3.5rem; */
   padding-inline: 3.5rem;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 25px;
+  /* font-weight: 700; */
   font-weight: 700;
   background-color: #00ffff;
   border: #00ffff;
   box-shadow: 0px 0px 30px 0px #00ffff;
   color: #0b113b;
 }
+
+/* Le righe commentate sono le modifiche di stile aggiornate alla versione precendente */
