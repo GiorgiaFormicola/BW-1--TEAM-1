@@ -149,10 +149,14 @@ function startTimer() {
       // Passa alla prossima domanda
       j++;
       contatoreDomande++;
+      contatoreRisposteSbagliate++;
 
       if (j < arrayOttimizzato.length) {
         attribuisciOggetto(arrayOttimizzato, j);
       } else {
+        localStorage.setItem("contatoreRisposteGiuste", contatoreRisposteGiuste);
+        localStorage.setItem("contatoreRisposteSbagliate", contatoreRisposteSbagliate);
+        localStorage.setItem("totaleDomande", j);
         window.location.href = "../results.html";
       }
     }
