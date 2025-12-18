@@ -11,10 +11,8 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
-    question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+    question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+    question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -116,7 +114,7 @@ arrayOttimizzato = shuffle();
 function updateUI() {
   const offset = -(circumference * (1 - remaining / totalTime));
   circle.style.strokeDashoffset = offset;
-  value.textContent = (remaining);
+  value.textContent = remaining;
 }
 
 const totalTime = 10;
@@ -135,13 +133,17 @@ let timerId;
 
 function startTimer() {
   clearInterval(timerId);
+  circle.classList.remove("animate-timer");
+  setTimeout(() => {
+    circle.classList.add("animate-timer");
+  });
   remaining = totalTime;
   updateUI();
 
   timerId = setInterval(() => {
     remaining--;
 
-    if (remaining < 0) {
+    if (remaining < 1) {
       clearInterval(timerId);
 
       // Pulisci risposte precedenti
@@ -226,5 +228,4 @@ const attribuisciOggetto = (array) => {
 
 window.onload = function () {
   attribuisciOggetto(arrayOttimizzato, j);
-  
 };
