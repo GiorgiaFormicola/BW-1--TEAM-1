@@ -160,7 +160,7 @@ footer {
   text-align: center;
 }
 
-a {
+footer a {
   display: inline-block;
   /* padding-block: 1rem; */
   padding-block: 1.5rem;
